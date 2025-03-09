@@ -1,8 +1,8 @@
 :root{
     --culoare_primara:#ebeced;
     --culoare_secundara:#7dafff;
-    --text:#303030;
-    --accent:#001942;
+    --text:#3a3333;
+    --accent:#042252;
 }
 
 *{
@@ -73,4 +73,46 @@ h1{
     padding-top: 20px;
     color: var(--text);
     font-size: 1rem
+}
+
+.utilizator{
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}
+
+.hamburger{
+    display: none;
+
+    @media screen and (max-width: 768px){
+        display: block;
+    }
+
+}
+
+.link_header{
+    display: flex;
+    justify-content: center;
+    
+    margin: 20px;
+    color: var(--text);
+    font-size: 2rem
+
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
