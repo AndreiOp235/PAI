@@ -94,7 +94,7 @@ h1{
     display: flex;
     justify-content: center;
     
-    margin: 20px;
+    margin: 15px;
     color: var(--text);
     font-size: 2rem
 
@@ -115,4 +115,31 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.utilizator{
+    float: right;
+    padding: 5px;
+}
+
+.login_log-out{
+    float: right;
+    padding: 5px;
+}
+
+.imaginesilogin{
+    float: right;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: var(--culoare_secundara);
+    color: var(--text);
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    cursor:crosshair;
 }
