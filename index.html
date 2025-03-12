@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="stiluri.css" title="Foaie de stiluri">
     <title>Intreaba chatu</title>
 </head>
@@ -20,8 +21,8 @@
                     <img src="images/user.png" width="120px" height="120px" style="float: right;">
                 </div>
                 <div class="login_log-out">
-                    <button style="color: blue; background-color: rgb(43, 214, 226);">login</button>
-                    <button style="color: red; background-color: rgb(43, 214, 226);">log-out</button>
+                    <button style="color: blue; background-color: rgb(199, 251, 255);">login</button>
+                    <button style="color: red; background-color: rgb(199, 251, 255);">log-out</button>
                 </div>
             </div>
         </div>
@@ -30,7 +31,7 @@
             <img src="images/burger-bar.png" width="50px" height="50px" alt="burger_menu">
         </div>
 
-        <h1>GPT_inatorul</h1>
+        <h1 class="titlul">GPT_inatorul</h1>
 
         <div class="linkuri_header">
             <div class="link_header">
@@ -50,33 +51,49 @@
 
     <br>
 
+    <div class="content">
+        <form action="index.html" method="get" class="formular">
+            <label for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
+                <textarea name="prompt_ts" class="prompt">Prompt</textarea>
+            <br>
+            <label for="selectie" class="intro_selectie">Selecteaza un model:</label>
+            <select class="selectie" name="selectie">
+                <option value="gpt3">GPT-3</option>
+                <option value="chatGPT">chatGPT</option>
+                <option value="claude">Claude AI</option>
+                <option value="mistral">Mistral AI</option>
+                <option value="deepseek">Deepseek CCP</option>
+            </select>
+            <div class="butoane">
+                <button class="Q">Intreaba</button>
+                <button class="A">rapsuns</button>
+            </div>
+            <br>
+            <div class="copiere">
+                <textarea class="linkuletz" disabled>https://link</textarea>
+                <button class="copie_text">Copie text</button>
+            </div>
+        </form> 
+        <p class="wink"> Lasa-ma sa intreb chatu` pentru tine</p>
 
+    </div>
 
-    <form action="lorem_ipsum.html" method="post">
-        <input type="text">
-        <br>
-        <select>
-            <option value="chatGPT">chatGPT</option>
-            <option value="claude">Claude AI</option>
-            <option value="mistral">Mistral AI</option>
-            <option value="deepseek">Deepseek CCP</option>
-        </select>
-        <button>rapsuns</button>
-        <button>intrebare</button>
-        <br>
-        <input type="text" disabled value="hhttps://link">
-        <a href=""> Copie text</a>
-    </form>
-    <p> Let me ask chatGPT for you</p>
+    
 
 
     <div class="footer">
         <div class="linkuri_header">
-            <a href="contact.html"> Contact</a>
-            <a href="contribuie.html">Sponsorizeaza</a>
-            <a href="site_map.html"> Harta Siteului</a>
-        </div>
-        <div>
+            <div class="link_footer">
+                <a href="contact.html"> Contact</a>
+            </div>
+            <div class="link_footer">
+                <a href="contribuie.html"> Sponsorizeaza</a>
+            </div>
+            <div class="link_footer">
+                <a href="site_map.html"> Harta Site-ului</a>
+            </div> 
+        </div>       
+        <div class="drepturi">
             <p>Copyright&#169; AN</p>
         </div>
 
