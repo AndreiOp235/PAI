@@ -14,6 +14,7 @@
 body {
     background-color: var(--culoare_primara);
     color: var(--text);
+    
   }
 
   @media screen and (prefers-color-scheme: dark) {
@@ -58,18 +59,15 @@ h1{
 .footer{
     background-color: var(--culoare_secundara);
     color: var(--text);
-    margin: 0;
-    padding: 0; 
-    bottom: 0;
     justify-content: center;
-    position:absolute;
-    bottom:0;
-    display: flex;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 
+    position: relative;
+    bottom:0;
+    width: 100%;
+    flex-direction: column;
 }
+
+
 
 .linkuri_footer{
     display: flex;
