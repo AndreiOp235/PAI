@@ -56,18 +56,34 @@ h1{
     border-radius: 5px;
 }
 
-.footer{
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Use a flex layout for the main container */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Let the main content area grow to fill available space */
+  .content {
+    flex: 1 0 auto;
+  }
+
+  /* Footer will stay at the bottom */
+  .footer {
     background-color: var(--culoare_secundara);
     color: var(--text);
     justify-content: center;
-
-    position: relative;
-    bottom:0;
     width: 100%;
-    flex-direction: column;
-}
-
-
+    flex-shrink: 0;
+    padding: 10px 0;
+  }
 
 .linkuri_footer{
     display: flex;
@@ -323,3 +339,13 @@ button {
     font-size: 1rem;
 }
 
+.clasa_legala{
+    font-family:  'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    background-color: whitesmoke;
+    border: 5px solid var(--accent);
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
