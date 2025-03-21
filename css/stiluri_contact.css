@@ -1,0 +1,43 @@
+.container_wrapper{
+    padding: 50px;
+    background-color: whitesmoke;
+    width: 80%;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto a new row */
+    justify-content: center; /* Centers icons horizontally */
+    align-items: center; /* Centers icons vertically */
+    align-content: center; /* Centers multiple rows within the container */
+    gap: 10px; /* Adds space between icons */
+    text-align: center; /* Ensures content inside aligns properly */
+}
+
+
+
+
+.social_item{
+    size:110%;
+    margin: 10px;    
+}
+
+.social_item:hover{
+    margin: 30px;
+}
+
+
+.caruselWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
