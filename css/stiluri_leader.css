@@ -1,8 +1,51 @@
+:root{
+    --culoare_primara:#ebeced;
+    --culoare_secundara:#7dafff;
+    --text:#3a3333;
+    --accent:#042252;
+}
+
+:root {
+    --backgroundContainer:whitesmoke;  /* Default (light mode) */
+    --hoverColor: #bffff6;
+    --borderColor:#ddd;
+    --thColor:#f4f4f4;
+    --evenColor:#d5f2f3;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --backgroundContainer:#1A1A1A;  /* Default (light mode) */
+        --hoverColor: #042252;
+        --borderColor:#444;
+        --thColor:#222831;
+        --evenColor:#393e46;
+    }
+}
+
+
+
+body {
+    background-color: var(--culoare_primara);
+    color: var(--text);
+    
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--accent);
+      color: var(--culoare_primara);
+    }
+
+
+  }
+
+
 .content_leader{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: whitesmoke;
+    background-color: var(--backgroundContainer);
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
@@ -37,7 +80,7 @@ h2{
 }
 
 .pozitie:hover{
-    background-color: #bffff6;
+    background-color: var(--hoverColor);
     border-radius: 5px;
 }
 
@@ -63,19 +106,19 @@ table {
   th, td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid var(--borderColor);
   }
   
   th {
-    background-color: #f4f4f4;
+    background-color: var(--thColor);
     font-weight: bold;
   }
   
   tr:nth-child(even) {
-    background-color: #d5f2f3;
+    background-color: var(--evenColor);
   }
   
   tr:hover {
-    background-color: #ece6e6;
+    background-color: var(--hoverColor);
   }
   

@@ -1,3 +1,5 @@
+
+
 :root{
     --culoare_primara:#ebeced;
     --culoare_secundara:#7dafff;
@@ -5,11 +7,17 @@
     --accent:#042252;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --backgroundContainer:whitesmoke;  /* Default (light mode) */
 }
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --backgroundContainer:#1A1A1A;  /* Default (light mode) */
+    }
+}
+
+
 
 body {
     background-color: var(--culoare_primara);
@@ -25,6 +33,12 @@ body {
 
 
   }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .header{
     background-color: var(--culoare_secundara);
@@ -186,7 +200,7 @@ button {
     @media screen and (min-width: 1600px){
         max-width: 1600px;
     }
-    background-color: whitesmoke;
+    background-color: var(--backgroundContainer);
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -342,7 +356,7 @@ button {
 .clasa_legala{
     font-family:  'Arial Narrow', Arial, sans-serif;
     font-size: 1.5rem;
-    background-color: whitesmoke;
+    background-color: var(--backgroundContainer);
     border: 5px solid var(--accent);
     border-radius: 5px;
     width: 80%;

@@ -1,7 +1,27 @@
+:root {
+    --backgroundContainer:whitesmoke;  /* Default (light mode) */
+    --hoverColor: #bffff6;
+    --borderColor:#ddd;
+    --thColor:#f4f4f4;
+    --evenColor:#d5f2f3;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --backgroundContainer:#1A1A1A;  /* Default (light mode) */
+        --hoverColor: #042252;
+        --borderColor:#444;
+        --thColor:#222831;
+        --evenColor:#393e46;
+    }
+}
+
 .container_wrapper{
     padding: 50px;
-    background-color: whitesmoke;
+    background-color: var(--backgroundContainer);
     width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .wrapper{
@@ -9,6 +29,8 @@
     display: flex;  
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .carousel {
@@ -28,7 +50,18 @@
 .social_item{
     size:110%;
     margin: 10px;    
+    
+    
 }
+
+@media (prefers-color-scheme: dark) {
+    .social_item {
+        filter: invert(1);
+    }
+}
+
+
+
 
 .social_item:hover{
     margin: 30px;
