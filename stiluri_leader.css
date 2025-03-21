@@ -36,6 +36,11 @@ h2{
     }
 }
 
+.pozitie:hover{
+    background-color: #bffff6;
+    border-radius: 5px;
+}
+
 .tabelul{
     display: flex;
     flex-direction: column;

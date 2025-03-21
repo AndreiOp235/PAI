@@ -1,0 +1,28 @@
+.container_wrapper{
+    padding: 50px;
+    background-color: whitesmoke;
+    width: 80%;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.carusel{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_item{
+    size:110%;
+    margin: 10px;    
+}
+
+.social_item:hover{
+    margin: 30px;
+}
