@@ -11,6 +11,8 @@
     <meta property="og:title"              content="GPT_inatorul" />
     <meta property="og:description"        content="Let me ask chatGPT for that" />
     <meta property="og:image"              content="images/preview.png" />
+    <script type="text/javascript" src="js/index.js"></script> 
+
 </head>
 
 <body>
@@ -60,7 +62,7 @@
     <div class="content">
         <form action="index.html" method="get" class="formular">
             <label for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
-                <textarea name="prompt_ts" class="prompt">Prompt</textarea>
+                <textarea name="prompt_ts" class="prompt" id="arieText"></textarea>
             <br>
             <label for="selectie" class="intro_selectie">Selecteaza un model:</label>
             <select class="selectie" name="selectie">
