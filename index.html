@@ -30,7 +30,7 @@
                 </div>
                 <div class="login_log-out">
                     <button style="color: blue; background-color: rgb(199, 251, 255);">login</button>
-                    <button style="color: red; background-color: rgb(199, 251, 255);">log-out</button>
+                    <button  style="color: red; background-color: rgb(199, 251, 255);">log-out</button>
                 </div>
             </div>
         </div>
@@ -61,25 +61,25 @@
 
     <div class="content">
         <form action="index.html" method="get" class="formular">
-            <label for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
-                <textarea name="prompt_ts" class="prompt" id="arieText"></textarea>
+            <label id="aboveText" for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
+                <textarea name="prompt_ts" class="prompt" id="arieText">Prompt</textarea>
             <br>
             <label for="selectie" class="intro_selectie">Selecteaza un model:</label>
-            <select class="selectie" name="selectie">
+            <select class="selectie" name="selectie" id="selectie">
                 <option value="gpt3">GPT-3</option>
                 <option value="chatGPT">chatGPT</option>
-                <option value="claude">Claude AI</option>
-                <option value="mistral">Mistral AI</option>
-                <option value="deepseek">Deepseek CCP</option>
+                <option value="Claude AI">Claude AI</option>
+                <option value="Mistral AI">Mistral AI</option>
+                <option value="Deepseek CCP">Deepseek CCP</option>
             </select>
             <div class="butoane">
-                <button class="Q">Intreaba</button>
-                <button class="A">rapsuns</button>
+                <button class="Q" id="Q">Intreaba</button>
+                <button class="A" id="A">rapsuns</button>
             </div>
             <br>
             <div class="copiere">
-                <textarea class="linkuletz" disabled>https://link</textarea>
-                <button class="copie_text">Copie text</button>
+                <textarea class="linkuletz" disabled id="copyLink">https://link</textarea>
+                <button class="copie_text" id="copie_text" onclick="generareLink()" type="button">Copie text</button>
             </div>
         </form> 
         <p class="wink"> Lasa-ma sa intreb chatu` pentru tine</p>
