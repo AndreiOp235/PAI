@@ -12,16 +12,20 @@
     <meta property="og:description"        content="Let me ask chatGPT for that" />
     <meta property="og:image"              content="images/preview.png" />
     <script type="text/javascript" src="js/index.js"></script> 
+    <script type="text/javascript" src="js/md5.js"></script> 
 
 </head>
 
 <body>
     <div class="header">
-        <div class="utilizator">
-            &lt;user&gt; :
-            <img src="images/sus.png" width="12px" height="12px" alt="sus">
-            14
-            <img src="images/jos.png" width="12px" height="12px" alt="sus">
+        <div class="utilizator" id="utilizator">
+            <span id="numeUtilizator"> &lt;user&gt; : </span>
+            <span id="karma">  
+                <img src="images/sus.png" width="12px" height="12px" alt="sus">
+                14
+                <img src="images/jos.png" width="12px" height="12px" alt="sus">
+            </span>
+
 
             <br>
             <div class="imaginesilogin">
@@ -29,8 +33,8 @@
                     <img src="images/user.png" width="120px" height="120px" style="float: right;">
                 </div>
                 <div class="login_log-out">
-                    <button style="color: blue; background-color: rgb(199, 251, 255);">login</button>
-                    <button  style="color: red; background-color: rgb(199, 251, 255);">log-out</button>
+                    <button style="color: blue; background-color: rgb(199, 251, 255);" id="butonLogin">login</button>
+                    <button  style="color: red; background-color: rgb(199, 251, 255);" id="butonLogout">log-out</button>
                 </div>
             </div>
         </div>

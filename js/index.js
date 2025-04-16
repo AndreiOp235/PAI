@@ -1,3 +1,5 @@
+var loginGlobal = true;
+
 window.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const prompt_ts = params.get("prompt_ts");
@@ -17,6 +19,22 @@ window.addEventListener("DOMContentLoaded", () => {
         const butonQ = document.getElementById("Q");
         butonA.disabled = true;
         butonQ.disabled = true;
+    }
+
+    if(loginGlobal === false) {
+        karma= document.getElementById("karma");
+        karma.style.display = "none";
+        username= document.getElementById("numeUtilizator");
+        username.innerText = "Nu sunteti logat !";
+        butonLogout= document.getElementById("butonLogout");
+        butonLogout.style.display = "none";
+    }
+    else {
+        karma= document.getElementById("karma");
+        karma.style.display = "inline";
+
+        butonLogin= document.getElementById("butonLogin");
+        butonLogin.style.display = "none";
     }
 });
 
@@ -48,7 +66,11 @@ function generareLink() {
     var text = textArea.value;
     const selectie2 = document.getElementById("selectie").value;
     var tinta= document.getElementById("copyLink");
-    var link = "https://andrei90.ro/index.html?prompt_ts=" + encodeURIComponent(text) + "&selectie="+selectie2+"&hash="+Math.random().toString(36).substring(2, 15);
+    var d = new Date();
+    var hash = d.toLocaleTimeString() + d.toLocaleDateString();
+    hash = md5(hash);
+    console.log(hash);
+    var link = "https://andrei90.ro/index.html?prompt_ts=" + encodeURIComponent(text) + "&selectie="+selectie2+"&hash="+hash;
     tinta.value = link;
     const ceva = "https://example.com/link";
     navigator.clipboard.writeText(link)
