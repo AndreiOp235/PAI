@@ -115,7 +115,12 @@
             </div> 
         </div>       
         <div class="drepturi">
-            <p>Copyright&#169; AN</p>
+            <p>Copyright&#169; 
+            <?php
+                $year = date("Y");
+                echo $year;
+            ?>
+            </p>
         </div>
 
     </div>
