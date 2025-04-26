@@ -143,6 +143,9 @@
                 <h2>
                     Top 10 utilizatori
                 </h2>
+
+
+
                 <table border=2 cellpadding=4>
                     <tr>
                         <td>
@@ -155,132 +158,67 @@
                             Karma
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            1.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
+                    <?php
+                        $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+                        $rezultatePePagina = 10;
+                        $offset = ($pagina - 1) * $rezultatePePagina;
 
-                    <tr>
+                        $con = mysqli_connect("localhost", "root", "");
+                        if ($con) { 
+                            mysqli_select_db($con, "bazapai");
 
-                        <td>
-                            2.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
+                            $rez = mysqli_query($con, "SELECT * FROM userKarma ORDER BY karma DESC LIMIT $rezultatePePagina OFFSET $offset");
 
-                    </tr>
-                    <tr>
-                        <td>
-                            3.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            4.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            5.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            6.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            7.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            9.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            10.
-                        </td>
-                        <td>
-                            lorem_ipsum
-                        </td>
-                        <td>
-                            undefined
-                        </td>
-                    </tr>
-
-
+                            $numar = 1;
+                            while ($inreg = mysqli_fetch_array($rez)) { 
+                                echo "<tr>";
+                                echo "<td>" . $numar+($pagina-1)*$rezultatePePagina . "</td>";
+                                echo "<td>";
+                                echo " " . htmlspecialchars($inreg['username']);
+                                echo "</td>";
+                                echo "<td>";
+                                echo $inreg['karma'];
+                                echo "</td>";
+                                echo "</tr>";
+                                $numar++;
+                            } 
+                        } else {
+                            echo "<br>Conexiunea NU a fost realizata!!<br>"; 
+                        }
+                    ?>
                 </table>
-                <div class="navigareTabel">
-                    <img src="../images/sus.png" width="12px" height="12px" alt="sus" style="transform: rotate(90deg);">
+                <?php
+                    $rez = mysqli_query($con, "SELECT COUNT(*) as total FROM userKarma");
+                    $inreg = mysqli_fetch_array($rez);
+                    $totalUtilizatori = $inreg['total'];
+                    $numarPagini = ceil($totalUtilizatori / $rezultatePePagina);
 
-                    <b>1 </b>
-                    <p> 2 3 ... </p>
-                    <img src="../images/sus.png" width="12px" height="12px" alt="sus"
-                        style="transform: rotate(-90deg);">
+                    // Make sure pagina is set
+                    if (!isset($pagina)) {
+                        $pagina = 1;
+                    }
 
-                </div>
+                    // Calculate previous and next pages
+                    $paginaAnterioara = max(1, $pagina - 1);
+                    $paginaUrmatoare = min($numarPagini, $pagina + 1);
 
+                    echo "<div class=\"navigareTabel\">";
+                    
+                    // Arrow to go to previous page
+                    echo "<a href=\"?pagina=$paginaAnterioara\">";
+                    echo "<img src=\"../images/sus.png\" width=\"12px\" height=\"12px\" alt=\"previous\" style=\"transform: rotate(-90deg);\">";
+                    echo "</a>";
+
+                    // Current page number
+                    echo "<b> $pagina </b>";
+
+                    // Arrow to go to next page
+                    echo "<a href=\"?pagina=$paginaUrmatoare\">";
+                    echo "<img src=\"../images/sus.png\" width=\"12px\" height=\"12px\" alt=\"next\" style=\"transform: rotate(90deg);\">";
+                    echo "</a>";
+
+                    echo "</div>";
+                ?>
 
             </div>
 

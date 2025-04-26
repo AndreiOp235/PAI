@@ -68,21 +68,17 @@ h2{
     }
 }
 
-.pozitie{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 30%;
-    @media screen and (max-width: 768px){
-        width: 100%;
-    }
-}
 
 .pozitie:hover{
     background-color: var(--hoverColor);
     border-radius: 5px;
 }
+
+.pozitiNe:hover{
+  background-color: var(--hoverColor);
+  border-radius: 5px;
+}
+
 
 .tabelul{
     display: flex;
