@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="../css/stiluriProfil.css" title="Foaie de stiluri">
         <link rel="icon" type="image/svg+xml" href="../images/openai.svg">
         <title>Profil</title>
-        <meta property="og:url"                content="https://andrei90.ro/index.html" />
+        <meta property="og:url"                content="https://andrei90.ro/index.php" />
         <meta property="og:type"               content="GPT_wrapper" />
         <meta property="og:title"              content="GPT_inatorul" />
         <meta property="og:description"        content="Let me ask chatGPT for that" />
@@ -21,13 +21,13 @@
     
             <div class="linkuri_header">
                 <div class="link_header">
-                    <a href="../index.html"> Acasa</a>
+                    <a href="../index.php"> Acasa</a>
                 </div>
                 <div class="link_header">
-                    <a href="../pages/hallOfFame.html">Hall of Fame</a>
+                    <a href="../pages/hallOfFame.php">Hall of Fame</a>
                 </div>
                 <div class="link_header">
-                    <a href="../pages/profile.html"> Profilul meu</a>
+                    <a href="../pages/profile.php"> Profilul meu</a>
                 </div>
             </div>
     
@@ -127,16 +127,16 @@
         <div class="footer">
             <div class="linkuri_header">
                 <div class="link_footer">
-                    <a href="../pages/contact.html"> Contact</a>
+                    <a href="../pages/contact.php"> Contact</a>
                 </div>
                 <div class="link_footer">
-                    <a href="../pages/contribuie.html"> Sponsorizeaza</a>
+                    <a href="../pages/contribuie.php"> Sponsorizeaza</a>
                 </div>
                 <div class="link_footer">
-                    <a href="../pages/site_map.html"> Harta Site-ului</a>
+                    <a href="../pages/site_map.php"> Harta Site-ului</a>
                 </div> 
                 <div class="link_footer">
-                    <a href="../pages/lorem_ipsum.html"> Termeni si Conditii</a>
+                    <a href="../pages/lorem_ipsum.php"> Termeni si Conditii</a>
                 </div> 
             </div>       
             <div class="drepturi">

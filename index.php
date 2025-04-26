@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/stiluri.css" title="Foaie de stiluri">
     <title>Intreaba chatu</title>
     <link rel="icon" type="image/svg+xml" href="images/openai.svg">
-    <meta property="og:url"                content="https://andrei90.ro/index.html" />
+    <meta property="og:url"                content="https://andrei90.ro/index.php" />
     <meta property="og:type"               content="GPT_wrapper" />
     <meta property="og:title"              content="GPT_inatorul" />
     <meta property="og:description"        content="Let me ask chatGPT for that" />
@@ -48,13 +48,13 @@
 
         <div class="linkuri_header">
             <div class="link_header">
-                <a href="index.html"> Acasa</a>
+                <a href="index.php"> Acasa</a>
             </div>
             <div class="link_header">
-                <a href="pages/hallOfFame.html">Hall of Fame</a>
+                <a href="pages/hallOfFame.php">Hall of Fame</a>
             </div>
             <div class="link_header">
-                <a href="pages/profile.html"> Profilul meu</a>
+                <a href="pages/profile.php"> Profilul meu</a>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
     <br>
 
     <div class="content">
-        <form action="index.html" method="get" class="formular">
+        <form action="index.php" method="get" class="formular">
             <label id="aboveText" for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
                 <textarea name="prompt_ts" class="prompt" id="arieText">Prompt</textarea>
             <br>
@@ -102,16 +102,16 @@
     <div class="footer">
         <div class="linkuri_header">
             <div class="link_footer">
-                <a href="pages/contact.html"> Contact</a>
+                <a href="pages/contact.php"> Contact</a>
             </div>
             <div class="link_footer">
-                <a href="pages/contribuie.html"> Sponsorizeaza</a>
+                <a href="pages/contribuie.php"> Sponsorizeaza</a>
             </div>
             <div class="link_footer">
-                <a href="pages/lorem_ipsum.html"> Termene si Condtii</a>
+                <a href="pages/lorem_ipsum.php"> Termene si Condtii</a>
             </div> 
             <div class="link_footer">
-                <a href="pages/site_map.html"> Harta Site-ului</a>
+                <a href="pages/site_map.php"> Harta Site-ului</a>
             </div> 
         </div>       
         <div class="drepturi">

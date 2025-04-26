@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="../css/stiluri.css" title="Foaie de stiluri">
     <title>T&C</title>
-    <meta property="og:url"                content="https://andrei90.ro/index.html" />
+    <meta property="og:url"                content="https://andrei90.ro/index.php" />
     <meta property="og:type"               content="GPT_wrapper" />
     <meta property="og:title"              content="GPT_inatorul" />
     <meta property="og:description"        content="Let me ask chatGPT for that" />
@@ -47,13 +47,13 @@
 
         <div class="linkuri_header">
             <div class="link_header">
-                <a href="../index.html"> Acasa</a>
+                <a href="../index.php"> Acasa</a>
             </div>
             <div class="link_header">
-                <a href="hallOfFame.html">Hall of Fame</a>
+                <a href="hallOfFame.php">Hall of Fame</a>
             </div>
             <div class="link_header">
-                <a href="profile.html"> Profilul meu</a>
+                <a href="profile.php"> Profilul meu</a>
             </div>
         </div>
 
@@ -124,16 +124,16 @@
     <div class="footer">
         <div class="linkuri_header">
             <div class="link_footer">
-                <a href="contact.html"> Contact</a>
+                <a href="contact.php"> Contact</a>
             </div>
             <div class="link_footer">
-                <a href="contribuie.html"> Sponsorizeaza</a>
+                <a href="contribuie.php"> Sponsorizeaza</a>
             </div>
             <div class="link_footer">
-                <a href="lorem_ipsum.html"> Termene si Condtii</a>
+                <a href="lorem_ipsum.php"> Termene si Condtii</a>
             </div> 
             <div class="link_footer">
-                <a href="site_map.html"> Harta Site-ului</a>
+                <a href="site_map.php"> Harta Site-ului</a>
             </div> 
         </div>       
         <div class="drepturi">
