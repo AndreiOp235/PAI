@@ -66,7 +66,7 @@
 
     </div>
 
-    <div style="padding: 50px;">
+    <div style="padding: 10px;">
     </div>
 
     <div class="content">
@@ -74,48 +74,33 @@
             <h2> Karma pozitiva</h2>
 
             <div class="pozitii" style="display: flex; align-items: stretch;">
-                <div class="pozitie">
-                    <h3>
-                        Locu 1
-                    </h3>
-                    <div class="karmaDisplay">
-                        &lt;user&gt; :
-                        <img src="../images/sus.png" width="12px" height="12px" alt="sus">
-                        14
-                        <img src="../images/jos.png" width="12px" height="12px" alt="sus">
-                    </div>
-                    <br>
-                    <img src="../images/user.png" width="120px" height="120px">
-                </div>
+            <?php
+                $con = mysqli_connect("localhost", "root", "");
+                if ($con) { 
+                    mysqli_select_db($con, "bazapai");
 
-                <div class="pozitie">
-                    <h3>
-                        Locu 2
-                    </h3>
-                    <div class="karmaDisplay">
-                        &lt;user&gt; :
-                        <img src="../images/sus.png" width="12px" height="12px" alt="sus">
-                        14
-                        <img src="../images/jos.png" width="12px" height="12px" alt="sus">
-                    </div>
-                    <br>
-                    <img src="../images/user.png" width="120px" height="120px">
-                </div>
+                    $rez = mysqli_query($con, "SELECT * FROM userKarma ORDER BY karma DESC LIMIT 3");
+                    $numar = 1;
+                    while ($inreg = mysqli_fetch_array($rez)) { 
+                        echo "<div class=\"pozitie\">";
+                        echo "<h3>Locul " . $numar . "</h3>";
+                        echo "<div class=\"karmaDisplay\">";
+                        echo " " . htmlspecialchars($inreg['username']);
+                        echo ": ";
+                        echo "<img src=\"../images/sus.png\" width=\"12px\" height=\"12px\" alt=\"sus\">";
+                        echo $inreg['karma'];
+                        echo "</div>";   // <- închidere corectă
+                        echo "<div class=\"avatar\">";
+                        echo "<img src=\"https://robohash.org/" . urlencode($inreg['username']) . ".png\" width=\"120px\" height=\"120px\" alt=\"avatar\">";
+                        echo "</div>";   // <- închidere corectă
+                        echo "</div>"; // închidere pentru clasa "pozitie"
+                        $numar++;
+                    } 
+                } else {
+                    echo "<br>Conexiunea NU a fost realizata!!<br>"; 
+                }
+            ?>
 
-
-                <div class="pozitie">
-                    <h3>
-                        Locu 3
-                    </h3>
-                    <div class="karmaDisplay">
-                        &lt;user&gt; :
-                        <img src="../images/sus.png" width="12px" height="12px" alt="sus">
-                        14
-                        <img src="../images/jos.png" width="12px" height="12px" alt="sus">
-                    </div>
-                    <br>
-                    <img src="../images/user.png" width="120px" height="120px">
-                </div>
             </div>
 
 
