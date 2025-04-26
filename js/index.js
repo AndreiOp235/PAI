@@ -1,4 +1,5 @@
 var loginGlobal = true;
+var visibilitate = true;
 
 window.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
@@ -38,7 +39,28 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function toggleLogin() {
+    if (visibilitate){
+        header=document.getElementById("br_header");
+        header.style.display = "none";
 
+        visibilitate = false;
+    }
+    else {
+        header=document.getElementById("br_header");
+        header.style.display = "inline";
+        visibilitate = true;
+    }
+
+    if(loginGlobal === false) {
+        butonLogout= document.getElementById("butonLogout1");
+        butonLogout.style.display = "none";
+    }
+    else {
+        butonLogin= document.getElementById("butonLogin1");
+        butonLogin.style.display = "none";
+    }
+}
 
 function insereaza(prompt_ts, selectie) {
     area=document.getElementById("arieText");
@@ -82,4 +104,4 @@ function generareLink() {
 window.addEventListener("DOMContentLoaded", () => {
    console.log("DOM fully loaded and parsed");
    
-});
+})
