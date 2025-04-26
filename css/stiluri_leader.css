@@ -44,7 +44,7 @@ body {
 .content_leader{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     background-color: var(--backgroundContainer);
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

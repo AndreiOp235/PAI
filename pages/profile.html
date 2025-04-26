@@ -10,6 +10,9 @@
         <meta property="og:title"              content="GPT_inatorul" />
         <meta property="og:description"        content="Let me ask chatGPT for that" />
         <meta property="og:image"              content="../images/preview.png" />
+        <script type="text/javascript" src="../js/variabile.js"></script>
+        <script type="text/javascript" src="../js/md5.js"></script>
+        <script type="text/javascript" src="../js/profil.js"></script>
     </head>
     <body>
         <div class="header">
@@ -33,24 +36,31 @@
 
         
         <div class="div_profil">
-            <div class="nelogat">
-                <p>Logheaza-te pentru a-ti accesa profilul</p>
-                <form action="/login.php" method="post">
-                    <label>e-mail:</label>
-                    <input type="text">
+            <div class="nelogat" id="nelogat" style="display: none;">
+                <p>Loghează-te pentru a-ți accesa profilul</p>
+        
+                <form action="/login.php" method="post" >
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="emailL" name="email" required maxlength="255">
                     <br>
-                    <label>parola:</label>
-                    <input type="password">
+        
+                    <label for="password">Parola:</label>
+                    <input type="password" id="passwordL" name="password" required minlength="1" maxlength="255">
                     <br>
-                    <button>Login</button>
+        
+                    <button type="submit">Login</button>
                 </form>
+                <p id="errorMsgL" style="color: red; display: none;"></p>
+
             </div>
+
         </div>
+        
 
 
         <br>
-        <div class="div_profil">
-            <div class="logat">
+        <div class="div_profil" >
+            <div class="logat" id="logat" style="display: none;">
                 <div style="float:center">
                     &lt;user&gt; Karma:
                 <img src="../images/sus.png" width="12px" height="12px" alt="sus"> 
@@ -61,38 +71,37 @@
                 <img src="../images/user.png"  width="120px" height="120px">
                 </div>
                 
-                <form action="update.html" method="post" class="formularProfil">
+                <form action="update.php method="post" class="formularProfil">
                     <div class="linieFormular">
                         <label> Nume </label>
-                        <input type="text">
+                        <input type="text" id="nume" name="nume" maxlength="255">
                     </div>
                     
                     <br>
                     <label> Prenume </label>
-                    <input type="text">
+                    <input type="text" id="prenume" name="prenume" maxlength="255">
                     <br>
                     <label> Nume utilizator </label>
-                    <input type="text">
+                    <input type="text" id="numeUtilizator" name="numeUtilizator" maxlength="255">
                     <br>
                     <label> E-mail </label>
-                    <input type="text">
+                    <input type="text" id="email" name="email" maxlength="255">
                     <br>
                     <label> Parola </label>
-                    <input type="password">
+                    <input type="password" id="password" name="password" required minlength="1" maxlength="255">
                     <br>
                     <label> Confirma parola </label>
-                    <input type="password">
-                    <label > !Cele 2 campuri nu corespund! </label>
+                    <input type="password" id="passwordC" name="passwordC" minlength="1" maxlength="255">
                     <br>
                     <label> Model preferat </label>
-                    <select>
+                    <select id="modelPreferat" name="modelPreferat">
                         <option value="chatGPT">chatGPT</option>
                         <option value="claude">Claude AI</option>
                         <option value="mistral">Mistral AI</option>
                         <option value="deepseek">Deepseek CCP</option>
                     </select>
                     <label> Cheie API model preferat </label>
-                    <input type="text">
+                    <input type="text" id="cheieAPI" name="cheieAPI" maxlength="255">
                     <br>
         
                     <button style="color: green;">update</button>
@@ -101,6 +110,7 @@
                     <input type="text" disabled value="my profile">
                     <a href=""> Copie text</a>         
                 </form>
+                <p id="errorMsg" style="color: red; display: none;"></p>
                 <div class="legaleza">
                     <p> Atentie schimbarea valorilor specifice contului va necesita o confirmare pe e-mail</p>
                     <p> Conform politicilor site-ului vom retine adresa de e-mail, karma si numele de utilizator pentru o perioda de maxim 2 ani</p>
@@ -136,4 +146,6 @@
         </div>
     
     </body>
+
+    
 </html>

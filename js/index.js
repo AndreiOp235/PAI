@@ -1,5 +1,6 @@
-var loginGlobal = true;
+var loginGlobal = window.loginGlobal || false; // Default to false if not defined
 var visibilitate = true;
+
 
 window.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
