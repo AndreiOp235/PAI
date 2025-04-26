@@ -124,26 +124,9 @@
         <br>
         
         
-        <div class="footer">
-            <div class="linkuri_header">
-                <div class="link_footer">
-                    <a href="../pages/contact.php"> Contact</a>
-                </div>
-                <div class="link_footer">
-                    <a href="../pages/contribuie.php"> Sponsorizeaza</a>
-                </div>
-                <div class="link_footer">
-                    <a href="../pages/site_map.php"> Harta Site-ului</a>
-                </div> 
-                <div class="link_footer">
-                    <a href="../pages/lorem_ipsum.php"> Termeni si Conditii</a>
-                </div> 
-            </div>       
-            <div class="drepturi">
-                <p>Copyright&#169; AN</p>
-            </div>
-    
-        </div>
+        <?php
+            include 'footer.php';
+        ?>
     
     </body>
 
