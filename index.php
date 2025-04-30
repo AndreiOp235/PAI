@@ -2,6 +2,15 @@
 <html>
 
 <head>
+    <?php
+    include 'pages/vfLogin.php';
+    ?><!-- Include the login check script -->
+
+    <script>
+        window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
+    </script>
+
+
     <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="css/stiluri.css" title="Foaie de stiluri">
     <title>Intreaba chatu</title>

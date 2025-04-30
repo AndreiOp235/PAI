@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const prompt_ts = params.get("prompt_ts");
     const selectie = params.get("selectie");
 
-    console.log("Prompt:", prompt_ts);
+    console.log("Prompt:_boss", prompt_ts);
     console.log("Selectie:", selectie);
 
     const selectieElement = document.getElementById("selectie");
@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     if(loginGlobal === false) {
+        console.log("Nu sunteti logat !");
         karma= document.getElementById("karma");
         karma.style.display = "none";
         username= document.getElementById("numeUtilizator");
@@ -32,6 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
         butonLogout.style.display = "none";
     }
     else {
+        console.log("Sunteti logat !");
         karma= document.getElementById("karma");
         karma.style.display = "inline";
 
@@ -100,9 +102,3 @@ function generareLink() {
     .then(() => console.log("Copiat cu succes!"))
     .catch(() => console.log("Nu s-a putut copia!"));
 }
-
-
-window.addEventListener("DOMContentLoaded", () => {
-   console.log("DOM fully loaded and parsed");
-   
-})
