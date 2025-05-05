@@ -8,6 +8,7 @@
 
     <script>
         window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
+        window.usernameGlobal = "<?= $_SESSION['username'] ?>";
     </script>
 
     <?php
@@ -49,9 +50,12 @@
             <br>
             <div class="imaginesilogin">
                 <div class="imagineUser">
-                    <?php
-                        echo "<img src=\"https://robohash.org/" . urlencode($_SESSION['username']) . ".png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
-                    ?>
+                <?php
+                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) 
+                                echo "<img src=\"https://robohash.org/" . urlencode($_SESSION['username']) . ".png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
+                            else
+                                echo "<img src=\"images/user.png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
+                        ?>
                     </div>
                 <div class="login_log-out">
                     <form action="" method ="post">
@@ -94,7 +98,7 @@
     <br>
 
     <div class="content">
-        <form action="index.php" method="get" class="formular">
+        <div class="formular">
             <label id="aboveText" for="prompt_text" class="intro_prompt">Introduceti un mesaj:</label>
                 <textarea name="prompt_ts" class="prompt" id="arieText">Prompt</textarea>
             <br>
@@ -107,15 +111,15 @@
                 <option value="Deepseek CCP">Deepseek CCP</option>
             </select>
             <div class="butoane">
-                <button class="Q" id="Q">Intreaba</button>
-                <button class="A" id="A">rapsuns</button>
+                <button class="Q" id="Q" onclick="injectareIntrebare()">Intreaba</button>
+                <button class="A" id="A" onclick="generareRapsuns()">rapsuns</button>
             </div>
             <br>
             <div class="copiere">
                 <textarea class="linkuletz" disabled id="copyLink">https://link</textarea>
                 <button class="copie_text" id="copie_text" onclick="generareLink()" type="button">Copie text</button>
             </div>
-        </form> 
+        </div> 
         <p class="wink"> Lasa-ma sa intreb chatu` pentru tine</p>
 
     </div>

@@ -1,8 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    $_SESSION['username']='Andrei90';
-    $_SESSION['password']='catETC';
+    
 }
 
 $isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
@@ -10,6 +9,8 @@ $isLoggedIn = true; // For testing purposes, set to false to simulate a logged-o
 
 if($isLoggedIn===true)
 {
+    $_SESSION['username']='Andrei90';
+    $_SESSION['password']='catETC';
     $con = mysqli_connect("localhost", "root", "");
                 if ($con) 
                 { 

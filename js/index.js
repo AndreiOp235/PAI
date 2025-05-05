@@ -31,8 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
         username.innerText = "Nu sunteti logat !";
         butonLogout= document.getElementById("butonLogout");
         butonLogout.style.display = "none";
-        profilePIC=document.getElementById("profilePIC");
-        profilePIC.src="images/user.png"
+
 
     }
     else {
@@ -128,5 +127,73 @@ function generareLink() {
     .catch(error => {
         console.error("POST failed:", error);
     });
+
+}
+
+function generareRapsuns()
+{
+    var textArea = document.getElementById("arieText");
+    var text = textArea.value;
+    const selectie2 = document.getElementById("selectie").value;
+    var tinta= document.getElementById("copyLink");
+    var d = new Date();
+    var hash = d.toLocaleTimeString() + d.toLocaleDateString();
+
+    const params = new URLSearchParams(window.location.search);
+    const prompt_ts = params.get("prompt_ts");
+    const selectie = params.get("selectie");
+    const hash2 = params.get("hash");
+
+    const data = new URLSearchParams();
+    data.append('prompt', prompt_ts);
+    data.append('model', selectie);
+    data.append('hash', hash2);
+    data.append('client', window.usernameGlobal);
+    
+    fetch('pages/rapsuns.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data
+    })
+    .then(response => response.text())
+    .then(text => {
+        console.log('Server says:', text);
+        var tinta= document.getElementById("copyLink");
+        tinta.value= JSON.parse(text).response;
+        // Resize the textarea to fit the content
+        tinta.style.height = "auto"; // Reset height
+        tinta.style.height = (tinta.scrollHeight) + "px"; // Set the height to scrollHeight
+
+    })
+    .catch(error => console.error('Error:', error));
+
+    
+
+}
+
+function injectareIntrebare()
+{
+    var textArea = document.getElementById("arieText");
+    var text = textArea.value;
+    const selectie2 = document.getElementById("selectie").value;
+
+    var currentUrl = window.location.href;
+
+    // Define the query parameters
+    var params = new URLSearchParams(window.location.search);
+
+    // Add or modify parameters as needed
+    params.set('prompt_ts', text);  // Adds or updates param1
+    params.set('selectie', selectie2);  // Adds or updates param2
+
+    // Build the new URL with query parameters
+    var newUrl = window.location.origin + window.location.pathname + '?' + params.toString();
+
+    // Reload the page with the new URL (GET request with params)
+    window.location.href = newUrl;
+
+
 
 }
