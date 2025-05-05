@@ -31,11 +31,15 @@ window.addEventListener("DOMContentLoaded", () => {
         username.innerText = "Nu sunteti logat !";
         butonLogout= document.getElementById("butonLogout");
         butonLogout.style.display = "none";
+        profilePIC=document.getElementById("profilePIC");
+        profilePIC.src="images/user.png"
+
     }
     else {
         console.log("Sunteti logat !");
         karma= document.getElementById("karma");
         karma.style.display = "inline";
+
 
         butonLogin= document.getElementById("butonLogin");
         butonLogin.style.display = "none";
@@ -95,10 +99,34 @@ function generareLink() {
     var hash = d.toLocaleTimeString() + d.toLocaleDateString();
     hash = md5(hash);
     console.log(hash);
-    var link = "https://andrei90.ro/index.html?prompt_ts=" + encodeURIComponent(text) + "&selectie="+selectie2+"&hash="+hash;
+    var link = "localhost/pai/index.php?prompt_ts=" + encodeURIComponent(text) + "&selectie="+selectie2+"&hash="+hash;
     tinta.value = link;
     const ceva = "https://example.com/link";
     navigator.clipboard.writeText(link)
     .then(() => console.log("Copiat cu succes!"))
     .catch(() => console.log("Nu s-a putut copia!"));
+
+    // Prepare data
+    const data = {
+        prompt_ts: text,
+        selectie: selectie2,
+        hash: hash
+    };
+
+    // Send POST request
+    fetch("pages/c.php", { // replace with your PHP file if different
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(data)
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log("POST succeeded:", result);
+    })
+    .catch(error => {
+        console.error("POST failed:", error);
+    });
+
 }

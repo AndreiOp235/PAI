@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <?php
+        include 'vfLogin.php';
+        ?><!-- Include the login check script -->
+
+        <script>
+            window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
+        </script>
+
+        <?php
+        include 'logout.php';
+        ?>
         <link rel="stylesheet" type="text/css"  href="../css/stiluri.css" title="Foaie de stiluri"> 
         <link rel="stylesheet" type="text/css"  href="../css/stiluri_contact.css" title="Foaie de stiluri"> 
         <title><?php echo isset($titluPagina) ? $titluPagina : 'headerFile'; ?></title>
@@ -10,17 +21,22 @@
         <meta property="og:title"              content="GPT_inatorul" />
         <meta property="og:description"        content="Let me ask chatGPT for that" />
         <meta property="og:image"              content="../images/preview.png" />
-        <script type="text/javascript" src="../js/variabile.js"></script>
         <script type="text/javascript" src="../js/md5.js"></script>
         <script type="text/javascript" src="../js/index.js"></script>
     </head>
     <body>
         <div class="header">
             <div class="utilizator" id="utilizator">
-                <span id="numeUtilizator"> &lt;user&gt; : </span>
+                <span id="numeUtilizator"> 
+                    <?php
+                        echo $_SESSION['username'];
+                    ?>
+                </span>
                 <span id="karma">  
                     <img src="../images/sus.png" width="12px" height="12px" alt="sus">
-                    14
+                    <?php
+                        echo $_SESSION['karma'];
+                    ?>
                     <img src="../images/jos.png" width="12px" height="12px" alt="sus">
                 </span>
     
@@ -28,13 +44,20 @@
                 <br>
                 <div class="imaginesilogin">
                     <div class="imagineUser">
-                        <img src="../images/user.png" width="120px" height="120px" style="float: right;">
-                    </div>
+                        <?php
+                            echo "<img src=\"https://robohash.org/" . urlencode($_SESSION['username']) . ".png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
+                        ?>
+                        </div>
                     <div class="login_log-out">
-                        <button style="color: blue; background-color: rgb(199, 251, 255);" id="butonLogin">login</button>
-                        <button  style="color: red; background-color: rgb(199, 251, 255);" id="butonLogout">log-out</button>
+                        <form action="" method ="post">
+                            <button type=submit name="logout" style="color: red; background-color: rgb(199, 251, 255);" id="butonLogout">log-out</button>
+                        </form>
+                        <form action="pages/profile.php">
+                            <button style="color: blue; background-color: rgb(199, 251, 255);" id="butonLogin">login</button>
+                        </form>
                     </div>
                 </div>
+            </div>
             </div>
     
             <div class="hamburger" style="float:right;" onclick="toggleLogin()">

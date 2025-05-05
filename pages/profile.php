@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <?php
+        include 'vfLogin.php';
+        ?><!-- Include the login check script -->
+
+        <script>
+            window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
+        </script>
+
         <link rel="stylesheet" type="text/css"  href="../css/stiluri.css" title="Foaie de stiluri"> 
         <link rel="stylesheet" type="text/css" href="../css/stiluriProfil.css" title="Foaie de stiluri">
         <link rel="icon" type="image/svg+xml" href="../images/openai.svg">
@@ -13,6 +21,7 @@
         <script type="text/javascript" src="../js/variabile.js"></script>
         <script type="text/javascript" src="../js/md5.js"></script>
         <script type="text/javascript" src="../js/profil.js"></script>
+        
     </head>
     <body>
         <div class="header">
@@ -61,7 +70,7 @@
         <br>
         <div class="div_profil" >
             <div class="logat" id="logat" style="display: none;">
-                <div style="float:center">
+                <div style="float:center" id="karma">
                     &lt;user&gt; Karma:
                 <img src="../images/sus.png" width="12px" height="12px" alt="sus"> 
                 undefined
@@ -111,6 +120,9 @@
                     <a href=""> Copie text</a>         
                 </form>
                 <p id="errorMsg" style="color: red; display: none;"></p>
+                <span class="placeholder" id="butonLogin">
+
+                </span>
                 <div class="legaleza">
                     <p> Atentie schimbarea valorilor specifice contului va necesita o confirmare pe e-mail</p>
                     <p> Conform politicilor site-ului vom retine adresa de e-mail, karma si numele de utilizator pentru o perioda de maxim 2 ani</p>
@@ -118,6 +130,7 @@
                     <p> Utilizarea site-ului implica supunerea termenilor si condtiilor site-ului si ale altor entitati 3rd party complet neasociate</p>
                 </div>
                 
+
             </div>
         </div>
         <br>
