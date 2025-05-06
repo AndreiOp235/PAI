@@ -58,7 +58,7 @@
                         ?>
                     </div>
                 <div class="login_log-out">
-                    <form action="" method ="post">
+                    <form action="pages/logout.php" method ="post">
                         <button type=submit name="logout" style="color: red; background-color: rgb(199, 251, 255);" id="butonLogout">log-out</button>
                     </form>
                     <form action="pages/profile.php">

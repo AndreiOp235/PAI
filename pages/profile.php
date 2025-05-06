@@ -48,7 +48,7 @@
             <div class="nelogat" id="nelogat" style="display: none;">
                 <p>Loghează-te pentru a-ți accesa profilul</p>
         
-                <form action="/login.php" method="post" >
+                <form action="vfLogin.php" method="post" >
                     <label for="email">E-mail:</label>
                     <input type="email" id="emailL" name="email" required maxlength="255">
                     <br>
@@ -71,16 +71,33 @@
         <div class="div_profil" >
             <div class="logat" id="logat" style="display: none;">
                 <div style="float:center" id="karma">
-                    &lt;user&gt; Karma:
-                <img src="../images/sus.png" width="12px" height="12px" alt="sus"> 
-                undefined
+                <span id="numeUtilizator"> 
+                <?php
+                    echo $_SESSION['username'];
+                ?>
+            </span>
+            
+            <span id="karma">  
+                <img src="../images/sus.png" width="12px" height="12px" alt="sus">
+                <?php
+                    echo $_SESSION['karma'];
+                ?>
                 <img src="../images/jos.png" width="12px" height="12px" alt="sus">
-        
-                <br>
-                <img src="../images/user.png"  width="120px" height="120px">
+            </span>
+
+            <br>
+
+            <div class="imagineUser">
+                <?php
+                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) 
+                                echo "<img src=\"https://robohash.org/" . urlencode($_SESSION['username']) . ".png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
+                            else
+                                echo "<img src=\"images/user.png\" width=\"120px\" height=\"120px\" alt=\"avatar\" id=\"profilePIC\">";
+                        ?>
+                    </div>
                 </div>
                 
-                <form action="update.php method="post" class="formularProfil">
+                <form action="update.php" method="post" class="formularProfil">
                     <div class="linieFormular">
                         <label> Nume </label>
                         <input type="text" id="nume" name="nume" maxlength="255">
@@ -113,8 +130,9 @@
                     <input type="text" id="cheieAPI" name="cheieAPI" maxlength="255">
                     <br>
         
-                    <button style="color: green;">update</button>
-                    <button style="color: red;">sterge cont</button>
+                    <button type="submit" name="update" style="color: green;">update</button>
+                    <button type="submit" name="delete" style="color: red;">sterge cont</button>
+
                     <br>
                     <input type="text" disabled value="my profile">
                     <a href=""> Copie text</a>         
