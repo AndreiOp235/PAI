@@ -31,8 +31,8 @@ if (isset($_POST['prompt']) && isset($_POST['hash']))
                     $minumminus = "UPDATE userkarma SET karma = karma - 1 WHERE username LIKE '" . $_POST['client'] . "'; ";
                     $rez = mysqli_query($con, $minumminus);
                 } 
-                //$plusplus="UPDATE userkarma SET karma = karma + 1 WHERE username LIKE '". $gazda ."'; ";
-                //$rez = mysqli_query($con, $plusplus);
+                $plusplus="UPDATE userkarma SET karma = karma + 1 WHERE username LIKE '". $gazda ."'; ";
+                $rez = mysqli_query($con, $plusplus);
 
                 //GPT code
                 header('Content-Type: application/json');
