@@ -10,11 +10,11 @@
         window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
         window.usernameGlobal = "<?= $_SESSION['username'] ?>";
     </script>
-
-    <?php
-    include 'pages/logout.php';
-    ?>
-
+    <script>
+        window.loginGlobal = 
+        <?= isset($_SESSION['loggedin']) ? 'true' : 'false' ?>;
+        window.usernameGlobal = "<?= $_SESSION['username'] ?>";
+    </script>
 
     <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="css/stiluri.css" title="Foaie de stiluri">

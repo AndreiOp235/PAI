@@ -6,7 +6,8 @@
         ?><!-- Include the login check script -->
 
         <script>
-            window.loginGlobal = <?= $isLoggedIn ? 'true' : 'false' ?>;
+            window.loginGlobal = 
+            <?= isset($_SESSION['loggedin']) ? 'true' : 'false' ?>;
         </script>
 
         <link rel="stylesheet" type="text/css"  href="../css/stiluri.css" title="Foaie de stiluri"> 
@@ -18,7 +19,6 @@
         <meta property="og:title"              content="GPT_inatorul" />
         <meta property="og:description"        content="Let me ask chatGPT for that" />
         <meta property="og:image"              content="../images/preview.png" />
-        <script type="text/javascript" src="../js/variabile.js"></script>
         <script type="text/javascript" src="../js/md5.js"></script>
         <script type="text/javascript" src="../js/profil.js"></script>
         
@@ -96,6 +96,10 @@
                         ?>
                     </div>
                 </div>
+
+                <form action="logout.php" method="post">
+                            <button type="submit" name="logout" style="color: red; background-color: rgb(199, 251, 255);" id="butonLogout">log-out</button>
+                </form>
                 
                 <form action="update.php" method="post" class="formularProfil">
                     <div class="linieFormular">

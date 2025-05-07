@@ -1,7 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    
 }
 
 if(isset($_POST['email'])&&isset($_POST['email']))
@@ -22,8 +21,8 @@ if(isset($_POST['email'])&&isset($_POST['email']))
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $inreg['username'];
                     echo $_SESSION['username'];
-                    //echo "<script>window.location.href = '../index.php';</script>";
-                    //exit();
+                    echo "<script>window.location.href = 'profile.php';</script>";
+                    exit();
                 }
                 else
                 {
@@ -33,8 +32,6 @@ if(isset($_POST['email'])&&isset($_POST['email']))
         else
             echo "Nu exista acest user cu adresa ". $_POST['email'];
     }
-
-
 }
 
 /*
@@ -54,13 +51,11 @@ fisierul secret cu parole
 
 */
 
-
-$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
 //$isLoggedIn = false; // For testing purposes, set to false to simulate a logged-out state
 
-if($isLoggedIn===true)
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true )
 {
-    echo "sunt logat <br>";
+    //echo "sunt logat <br>";
     $con = mysqli_connect("localhost", "root", "");
                 if ($con) 
                 { 
@@ -73,7 +68,7 @@ if($isLoggedIn===true)
 }
 else
 {
-    echo "nu sunt logat <br>";
+    //echo "nu sunt logat <br>";
 }
 
 ?>
