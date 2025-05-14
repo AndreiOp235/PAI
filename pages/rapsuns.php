@@ -43,7 +43,7 @@ if (isset($_POST['prompt']) && isset($_POST['hash']))
                 $data = [
                     'model' => 'gpt-3.5-turbo',
                     'messages' => [
-                        ['role' => 'user', 'content' => "For the following question give a short answer:  " . $_POST['prompt']]
+                        ['role' => 'user', 'content' => "For the following question give a short answer:  " . $_POST['prompt']] //can be funny or serious, but short
                     ],
                     'temperature' => 0.7
                 ];
